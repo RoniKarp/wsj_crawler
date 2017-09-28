@@ -1,6 +1,6 @@
-from utils import scraping_data_from_wsj_by_year, create_pivot_table_from_data
+from utils import scraping_data_from_wsj_by_year, create_pivot_table_from_data, input_year
 
-year = input("Enter Year(yyyy):")
+year = input_year("Enter Year(yyyy):")
 print("Start analyses..")
 data_file = scraping_data_from_wsj_by_year("trio_gram_spider.py", year, 1,'result/temp/ex2_scraped_data.csv')
 print("Scraping complete..")

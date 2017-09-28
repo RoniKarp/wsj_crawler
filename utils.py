@@ -65,3 +65,17 @@ def parse_article_date(response):
     date = response.xpath('//*[@id="archivedArticles"]/h3/text()').extract_first()
     date = date[17:]
     return date
+
+
+def input_year(message):
+    while True:
+        try:
+            user_input = int(input(message))
+            if user_input not in range(2010, 2017):
+                raise ValueError('The year should be between 2010-2017')
+        except ValueError as e:
+            print(e)
+            continue
+        else:
+            return user_input
+            break
