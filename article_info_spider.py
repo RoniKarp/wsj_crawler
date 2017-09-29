@@ -7,7 +7,7 @@ class ArticleInfoSpider(WSJSpider):
 
     def parse_day(self, response):
         date = parse_article_date(response)
-        filename = "ex1_result/" + date_formatter(date, '%Y/%m/%d') + ".csv"
+        filename = "result/ex1_result/" + date_formatter(date, '%Y/%m/%d') + ".csv"
         date = date_formatter(date, '%d/%m/%Y')
 
         articles_info = []

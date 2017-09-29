@@ -1,7 +1,6 @@
-from utils import scraping_data_from_wsj_by_year, input_year
-import shutil
+from utils import scraping_data_from_wsj_by_year, input_year, reset_result_folder
 
-shutil.rmtree('ex1_result')
+reset_result_folder()
 from_year = input_year("Enter From Year(yyyy):")
 to_year = input_year("Enter To Year(yyyy):")
 year_list=range(int(from_year),int(to_year)+1)

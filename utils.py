@@ -2,6 +2,8 @@ import csv
 import errno
 import os
 import re
+import shutil
+
 import pandas as pd
 from dateutil.parser import parse
 from nltk import ngrams
@@ -71,7 +73,7 @@ def input_year(message):
     while True:
         try:
             user_input = int(input(message))
-            if user_input not in range(2010, 2017):
+            if user_input not in range(2010, 2018):
                 raise ValueError('The year should be between 2010-2017')
         except ValueError as e:
             print(e)
@@ -79,3 +81,8 @@ def input_year(message):
         else:
             return user_input
             break
+
+
+def reset_result_folder():
+    if os.path.isdir('./dir'):
+        shutil.rmtree('result/ex1_result')
